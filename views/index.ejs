@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="/javascripts/jquery-3.6.1.min.js"></script>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+            <div id="teamList">
+                <button id="league_select" value="프리미어리그">
+                    <a href="/premier">프리미어리그</a>
+                </button>
+                <button id="league_select" value="프리메라리가">
+                    <a href="/laliga">프리메라리가</a>
+                </button>
+                <button id="league_select" value="분데스리가">
+                    <a href="/bundesliga">분데스리가</a>
+                </button>
+                <button id="league_select" value="세리어-a">
+                    <a href="/seriea">세리에 A</a>
+                </button>
+                <button id="league_select" value="리그-1">
+                    <a href="/league1">리그 1</a>
+                </button>
+                <button id="league_select" value="k리그-1">
+                    <a href="kleague1">k리그</a>
+                </button>
+            </div>
+            <table id="mainList">
+                <tr id="layer">
+                    <td id="rank">순위</td>
+                    <td id="team">팀</td>
+                    <td id="game">경기수</td>
+                    <td id="point">승점</td>
+                    <td id="win">승</td>
+                    <td id="draw">무</td>
+                    <td id="lose">패</td>
+                    <td id="score">득점</td>
+                    <td id="concede">실점</td>
+                    <td id="gap">득실차</td>
+                </tr>
+    <%
+                    for(var i=0; i < list.length; i++) {
+    %>
+                        <tr id="oneLine">
+                            <td id="rank"><%= list[i].rank %></td>
+                            <td id="team"><%= list[i].team %></td>
+                            <td id="game"><%= list[i].game %></td>
+                            <td id="point"><%= list[i].point %></td>
+                            <td id="win"><%= list[i].win %></td>
+                            <td id="draw"><%= list[i].draw %></td>
+                            <td id="lose"><%= list[i].lose %></td>
+                            <td id="score"><%= list[i].score %></td>
+                            <td id="concede"><%= list[i].concede %></td> 
+                            <td id="gap"><%= list[i].gap %></td>
+                        </tr>   
+    <%
+                    }
+    %>
+            </table>     
+            <p></p>
+    </body>
+</html>
